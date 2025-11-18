@@ -1,11 +1,12 @@
-import requests
 import os
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-from gql import gql, Client
+
+import requests
+from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
 
-BRANCH = os.environ["BRANCH"]  # set workflow input defaults to fifteen
+BRANCH = os.environ["BRANCH"]
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 INPUT_DATE = os.environ["START_DATE"]
 
@@ -13,14 +14,18 @@ ORG = "PixelOS-AOSP"
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
 
 
-def get_projects(file) -> list:
+def get_projects(file) -> list[str]:
     contents = requests.get(
-        f"https://github.com/PixelOS-AOSP/manifest/blob/{BRANCH}/snippets/{file}.xml?raw=True"
+        f"https://github.com/PixelOS-AOSP/android_manifest/blob/{BRANCH}/snippets/{file}.xml?raw=True"
     ).content
     root = ET.fromstring(contents)
 
     projects = root.findall(".//project")
-    project_names = [project.get("name") for project in projects]
+    project_names = [
+        project.get("name", "").split("/")[1]
+        for project in projects
+        if project.get("remote", "") == "github"
+    ]
 
     return project_names
 
@@ -133,7 +138,7 @@ start_date = datetime.strptime(INPUT_DATE, "%Y-%m-%d").replace(tzinfo=timezone.u
 
 
 all_commits = []
-for repo in get_projects("custom"):
+for repo in get_projects("pixelos"):
     print(f"Fetching commits from {repo}...")
     commits = fetch_commits(repo, start_date, end_date)
     all_commits.extend(commits)
