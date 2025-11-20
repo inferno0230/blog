@@ -4,8 +4,15 @@ pageClass: changelogSection
 
 # Changelogs
 
+## 2025-11-19
+[d6ca532](https://github.com/PixelOS-AOSP/android_hardware_libhardware/commit/d6ca532a212ad01dbfc5efa781e2120632711ce2) libhardware: Add new display types. _(by Dileep Marchya)_  
+
 ## 2025-11-18
 [036e39b](https://github.com/PixelOS-AOSP/android_vendor_lineage/commit/036e39b1ec68ba6f3f1d8791a60d072d81afe468) Revert "release: Bump Security String to 2025-11-01" _(by hridaya)_  
+
+## 2025-11-17
+[5667570](https://github.com/PixelOS-AOSP/android_hardware_interfaces/commit/56675704c299644cebca1be006d305830548a3f8) audio: Allow opting out of speaker_layout_channel_mask field _(by LuK1337)_  
+[05477ca](https://github.com/PixelOS-AOSP/android_system_media/commit/05477caa26384af2a0e73fbc82050ec77f3b672f) audio: Allow opting out of speaker_layout_channel_mask field _(by LuK1337)_  
 
 ## 2025-11-12
 [e71b1f7](https://github.com/PixelOS-AOSP/android_build/commit/e71b1f7a59dec6e19c1ab950593414f28fd6f68d) envsetup: Build OOT kernel during lunch if needed _(by Michael Bestas)_  
