@@ -7,15 +7,15 @@ on:
 
 env:
   BRANCH: "sixteen"
-  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   START_DATE: "2025-10-01"
 
 jobs:
   regen-changelogs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
@@ -38,7 +38,7 @@ jobs:
       - name: Commit changes
         run: |
           git config user.name "PixelOS-Bot"
-          git config user.email "pixelos.pixelish@gmail.com"
+          git config user.email "auto-bot@pixelos.net"
           git add changelogs
           git commit -m 'Regen changelogs as per ${{ steps.date.outputs.date }}'
           git push
