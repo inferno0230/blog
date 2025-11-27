@@ -4,6 +4,20 @@ pageClass: changelogSection
 
 # Changelogs
 
+## 2025-11-26
+[79b7144](https://github.com/PixelOS-AOSP/android_packages_apps_Settings/commit/79b71447a7bdf7b674fef1c9c881d46f4125c349) Revert "Settings: Add option to disable forcing strong integrity" _(by hridaya)_  
+[015560e](https://github.com/PixelOS-AOSP/android_vendor_custom/commit/015560eae41b0e39d2a08b33e84a5e2cd3bce7ba) repopick: try fetching pixelos gerrit changes from GitHub first _(by inferno0230)_  
+
+## 2025-11-23
+[f04db93](https://github.com/PixelOS-AOSP/android_frameworks_base/commit/f04db931b51af4eb4268e85cf4ab66ccbf3d5fca) Revert "PropImitationHooks: Add option for GMS to get cert chain" _(by hridaya)_  
+[8d394d5](https://github.com/PixelOS-AOSP/android_frameworks_base/commit/8d394d5d72b5ef9b4dbc8e7cb56d652ac48fb83a) KeyboxImitationHooks: Revert recent changes _(by inferno0230)_  
+
+## 2025-11-22
+[b3b5f06](https://github.com/PixelOS-AOSP/android_packages_apps_Settings/commit/b3b5f06810a6730fb21d68ccc4cae61f54d28c9b) Settings: Add a RemotePreference for device-specific doze settings _(by Steve Kondik)_  
+
+## 2025-11-21
+[b8a3b66](https://github.com/PixelOS-AOSP/android_packages_apps_Settings/commit/b8a3b662c775928ac28bf3ad77668333a0c9d012) Settings: Add config to display Now Playing _(by Pranav Vashi)_  
+
 ## 2025-11-19
 [d6ca532](https://github.com/PixelOS-AOSP/android_hardware_libhardware/commit/d6ca532a212ad01dbfc5efa781e2120632711ce2) libhardware: Add new display types. _(by Dileep Marchya)_  
 
